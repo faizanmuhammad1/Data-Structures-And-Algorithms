@@ -1,4 +1,4 @@
-package BinaryTree;
+package Tree;
 public class BinarySearchTree
 {
     private Node root;
