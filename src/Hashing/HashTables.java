@@ -3,8 +3,8 @@ package Hashing;
 import java.util.Arrays;
 
 public class HashTables {
-    int[] arr;
-    int capacity;
+    private int[] arr;
+    private int capacity;
     HashTables(int size){
         arr = new int[size];
         Arrays.fill(arr, -1);
