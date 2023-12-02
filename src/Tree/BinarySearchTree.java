@@ -52,4 +52,16 @@ public class BinarySearchTree
     public void search(int key){
         System.out.println(searchWithNode(key,root)?"found":"not found");
     }
+
+    public static void main(String[] args) {
+        BinarySearchTree bst = new BinarySearchTree();
+        bst.insert(10);
+        bst.insert(5);
+        bst.insert(20);
+        bst.insert(15);
+        bst.insert(30);
+        bst.insert(25);
+        bst.inOrder();
+
+    }
 }

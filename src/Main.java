@@ -1,9 +1,15 @@
+import SortingAlgorithms.MergeSort;
 import Tree.*;
 import Hashing.*;
-public class Main {
-    public static void main(String[] args) {
-        BinaryHeap bh = new BinaryHeap(8);
 
+import java.util.Arrays;
+
+public class Main {
+      public static void main(String[] args){
+        int[] arr = {4,2,1,7,3,6,7};
+        MergeSort s =  new MergeSort();
+        s.sort(arr);
+        System.out.println(Arrays.toString(arr));
     }
 }
 
