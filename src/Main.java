@@ -1,4 +1,4 @@
-import SortingAlgorithms.MergeSort;
+import SortingAlgorithms.*;
 import Tree.*;
 import Hashing.*;
 
@@ -7,8 +7,8 @@ import java.util.Arrays;
 public class Main {
       public static void main(String[] args){
         int[] arr = {4,2,1,7,3,6,7};
-        MergeSort s =  new MergeSort();
-        s.sort(arr);
+        InsertionSort is = new InsertionSort();
+        is.sort(arr);
         System.out.println(Arrays.toString(arr));
     }
 }
