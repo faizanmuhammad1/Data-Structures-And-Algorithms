@@ -96,6 +96,26 @@ public class AVLTree {
             preOrderTraversal(node.right);
         }
     }
+
+    public boolean search(int key) {
+    return search(root, key);
+}
+
+private boolean search(Node node, int key) {
+    if (node == null) {
+        return false;
+    }
+
+    if (key == node.data) {
+        return true;
+    } else if (key < node.data) {
+        return search(node.left, key);
+    } else {
+        return search(node.right, key);
+    }
+}
+
+
     public void printPreOrderTraversal(){
         preOrderTraversal(root);
     }

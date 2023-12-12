@@ -53,6 +53,51 @@ public class BinarySearchTree
         System.out.println(searchWithNode(key,root)?"found":"not found");
     }
 
+    public void delete(int key) {
+        root = deleteNode(root, key);
+    }
+
+    private Node deleteNode(Node root, int key) {
+        // Base case: If the tree is empty
+        if (root == null) {
+            return root;
+        }
+
+        // Recursive cases
+        if (key < root.data) {
+            // If the key to be deleted is smaller, then it lies in the left subtree
+            root.left = deleteNode(root.left, key);
+        } else if (key > root.data) {
+            // If the key to be deleted is greater, then it lies in the right subtree
+            root.right = deleteNode(root.right, key);
+        } else {
+            // Node with only one child or no child
+            if (root.left == null) {
+                return root.right;
+            } else if (root.right == null) {
+                return root.left;
+            }
+
+            // Node with two children
+            // Find the inorder successor (smallest node in the right subtree)
+            root.data = minValue(root.right);
+
+            // Delete the inorder successor
+            root.right = deleteNode(root.right, root.data);
+        }
+
+        return root;
+    }
+
+    private int minValue(Node root) {
+        int minValue = root.data;
+        while (root.left != null) {
+            minValue = root.left.data;
+            root = root.left;
+        }
+        return minValue;
+    }
+
     public static void main(String[] args) {
         BinarySearchTree bst = new BinarySearchTree();
         bst.insert(10);
