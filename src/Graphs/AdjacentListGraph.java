@@ -12,7 +12,6 @@ public class AdjacentListGraph{
             this.label=label;
         }
 
-        @Override
         public String toString() {
             return STR."Node{label='\{label}\{'\''}\{'}'}";
         }
